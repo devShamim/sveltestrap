@@ -96,7 +96,7 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
-    "popperjs/core": "git+https://github.com/devShamim/popperjs-core.git"
+    "popperjs": "git+https://github.com/devShamim/popperjs-core.git"
   },
   "browserslist": "last 2 versions"
 }
