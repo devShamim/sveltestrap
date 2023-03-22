@@ -1,6 +1,6 @@
 <script>
   import { onDestroy, onMount } from 'svelte';
-  import { createPopper } from '@popperjs/core/dist/esm/popper';
+  import { createPopper } from 'popperjs/core/dist/esm/popper';
   import classnames, { uuid } from './utils';
   import InlineContainer from './InlineContainer.svelte';
   import Portal from './Portal.svelte';
@@ -43,7 +43,7 @@
 
   const open = () => (isOpen = true);
   const close = () => (isOpen = false);
-  
+
   onMount(registerEventListeners);
   onDestroy(unregisterEventListeners);
 
@@ -59,7 +59,7 @@
         return;
     }
 
-    // Check if target is HTMLElement 
+    // Check if target is HTMLElement
     try {
         if (target instanceof HTMLElement) {
             targetEl = target;
@@ -68,7 +68,7 @@
         // fails on SSR
     }
 
-    // If targetEl has not been found yet 
+    // If targetEl has not been found yet
     if (targetEl == null) {
         // Check if target can be found via querySelector
         try {
@@ -78,7 +78,7 @@
             // fails on SSR
         }
     }
-    
+
     // If we've found targetEl
     if (targetEl) {
       targetEl.addEventListener('mouseover', open);
@@ -88,7 +88,7 @@
     }
   }
 
-  function unregisterEventListeners() { 
+  function unregisterEventListeners() {
     if (targetEl) {
       targetEl.removeEventListener('mouseover', open);
       targetEl.removeEventListener('mouseleave', close);
